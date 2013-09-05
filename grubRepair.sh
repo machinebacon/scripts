@@ -1,3 +1,5 @@
+## PROPERTY OF LINUXBBQ ##
+
 #!/bin/bash
 
 # Arguments:

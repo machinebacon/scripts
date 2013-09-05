@@ -1,3 +1,6 @@
+## EXPERIMENTAL, SOME FUCKIN AROUND ##
+
+
 #! /bin/bash
 
 #TEMP=``

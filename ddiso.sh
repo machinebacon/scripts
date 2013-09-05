@@ -1,3 +1,5 @@
+## PROPERTY OF LINUXBBQ ##
+
 #!/bin/bash
 # script to copy an iso to usb stick at /dev/sdb
 

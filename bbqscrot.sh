@@ -1,3 +1,5 @@
+## THIS IS THE PROPERTY OF LINUXBBQ ##
+
 #!/bin/bash
 
 action=$(yad --skip-taskbar --width 300 --title "Take Screenshot" \

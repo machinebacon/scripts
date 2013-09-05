@@ -1,3 +1,6 @@
+## EXPERIMENTAL FUCKIN AROUND ##
+
+
 #! /bin/bash
 
 #temp=``
