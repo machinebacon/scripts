@@ -1,16 +1,13 @@
 #! /bin/bash
 
-#temp=``
-mem=`free -m | grep buffers/cache`
-time=`date`
-batt=`cat /sys/class/power_supply_BAT0/capacity`
-#uptime=`uptime`
-#mail=``
+temp=$(cat /sys/class/thermal/thermal_zone0/temp | awk '{print $1/1000}') 
+mem=$(free -m | grep buffers/cache | sed -e 's/[buffers/cache -+ :]//g' | sed 's/.\{4\}$//')
+time=$(date | sed -e 's/EST 2013//g') 
+batt=$(cat /sys/class/power_supply/BAT0/capacity)
+mail=$($HOME/mail)
 
 #OUTPUT=
-$(echo -e $time $batt $mem | osd_cat -o 0 -d 15 -c black)
-#`echo -e $time $mail $batt $uptime $mem | osd_cat -o 2 -d 15 -c black`
-#-f -*-fixed-*-*-*-*-10-*-*-*-*-*-*-*`
+$(echo -e $time '>>' m$mail b$batt r$mem t$temp | osd_cat -A center -o 2 -d 10 -c black)
 
-#notify-send -u critical "$OUTPUT"
+#`echo -e $time $mail $batt $uptime $mem | osd_cat -o 2 -d 15 -c black -f -*-fixed-*-*-*-*-10-*-*-*-*-*-*-*`
 
