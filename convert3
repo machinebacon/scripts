@@ -1,0 +1,10 @@
+#!/bin/sh
+# m4a to mp3
+
+for i in *.m4a; do
+  faad "$i"
+  x=`echo "$i"|sed -e 's/.m4a/.wav/'`
+  y=`echo "$i"|sed -e 's/.m4a/.mp3/'`
+  lame -h -b 256 "$x" "$y"
+  rm "$x"
+done

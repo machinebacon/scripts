@@ -47,6 +47,8 @@ fi
 
 #echo -e "${COLOR}${CAPACITY}${NON}${STATE}"
 #echo -e "${STATE}${NON}${COLOR}${CAPACITY}${NON}"
-echo -e "${COLOR}${CAPACITY}${NON}"
+OUTPUT="${COLOR}${CAPACITY}${NON}"
+echo -e "$OUTPUT"
+#echo -e "${COLOR}${CAPACITY}${NON}"
 
 # end

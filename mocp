@@ -1,0 +1,5 @@
+#! /bin/bash
+
+# output read by osd_cat
+#
+python $HOME/scripts/mocp_conky.py

@@ -1,0 +1,5 @@
+#! /bin/bash
+
+# script output read by osd_cat
+
+exec amixer get Master | egrep -o "[0-9]+%" | egrep -o "[0-9]*"

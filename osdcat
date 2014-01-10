@@ -1,0 +1,22 @@
+#! /bin/bash
+
+temp=$(cat /sys/class/thermal/thermal_zone0/temp | awk '{print $1/1000}') 
+cpu=$(top -bn 2 -d 0.01 | grep '^%Cpu' | tail -n 1 | awk '{print $2+$4+$6}')
+#mem=$(free -h | grep buffers/cache | sed -e 's/[buffers/cache -+ :]//g' | sed 's/.\{3\}$//')
+mem=$(free -m | grep buffers/cache | sed -e 's/[buffers/cache -+ :]//g' | sed 's/.\{4\}$//')
+time=$(date | sed -e 's/EST 2013//g') 
+batt=$(cat /sys/class/power_supply/BAT0/capacity)
+mail=$($HOME/mail)
+music=$($HOME/mocp)
+vol=$($HOME/vol)
+
+#OUTPUT=
+## center no indent 
+$(echo -e $time '<<' m$mail b$batt r$mem c$cpu t$temp v$vol '>>' $music | osd_cat -p top -A center -o 1 -i 0 -d 10 -f -*-terminal-*-*-*-*-14-*-*-*-*-*-*-* -c gray ) #"#b4ac7e")
+## indent  position right
+#$(echo -e $time '<<' m$mail b$batt r$mem c$cpu t$temp v$vol '>>' $music | osd_cat -p top -A right -o 1 -i 200 -d 10 -f -*-terminal-*-*-*-*-14-*-*-*-*-*-*-* -c "#b4ac7e")
+
+#$(echo -e $time '<<' m$mail b$batt r$mem t$temp c$cpu v$vol '>>' $music | osd_cat -p top -A center -o 1 -d 10 -c black)
+
+## herbstluftwm
+#$(echo -e m$mail b$batt r$mem t$temp c$cpu v$vol | osd_cat -p top -A center -o 1 -d 10 -c gray)

@@ -15,10 +15,10 @@ x=0
 
 ## Since using the generic bg/fg, just pop it right in
 echo "!!!! <$SELECT> !!!!"
-echo "*background:"'#'"170f0d"
-echo "*foreground:"'#'"746c48"
+echo "*background:"'#'"111111"
+echo "*foreground:"'#'"d3d3d3"
 echo "*fading:10"
-echo "*fadeColor:"'#'"170f0d"
+echo "*fadeColor:"'#'"111111"
 echo "*transparent:0"
 echo "*shading:70"
 

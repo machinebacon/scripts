@@ -1,0 +1,6 @@
+#! /bin/bash
+
+# output read by osd_cat
+#
+python $HOME/bin/gmail.py
+
